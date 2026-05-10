@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hyundai VAYU — Abhimanyu Shukla</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-alt:#F8F8F5;--text:#111111;--text-2:#555555;--text-3:#999999;--border:#E5E5E2;--accent:#E07C55;--accent-lt:#FEF0EA;--serif:'Fraunces',Georgia,serif;--sans:'Inter',-apple-system,sans-serif;--max:1120px;--r:14px;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}
+.container{max-width:var(--max);margin:0 auto;padding:0 40px;}.narrow{max-width:760px;margin:0 auto;padding:0 40px;}
+nav{position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:1000;height:64px;}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 40px;height:100%;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--serif);font-size:1.05rem;font-weight:400;}
+.nav-prev-next{display:flex;gap:12px;}
+.nav-dir{font-size:0.8125rem;font-weight:500;color:var(--text-3);padding:6px 14px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s;}
+.nav-dir:hover{border-color:var(--text-2);color:var(--text);}
+.case-hero{padding:64px 0 0;border-bottom:1px solid var(--border);}
+.case-tag{font-size:0.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+.case-h1{font-family:var(--serif);font-size:clamp(32px,5vw,56px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;}
+.case-h1 em{font-style:italic;color:var(--accent);}
+.case-lead{font-size:1.0625rem;line-height:1.75;color:var(--text-2);max-width:680px;margin-bottom:32px;}
+.case-lead strong{color:var(--text);font-weight:500;}
+.meta-row{display:flex;gap:32px;flex-wrap:wrap;padding:24px 0;border-top:1px solid var(--border);margin-top:12px;}
+.meta-label{font-size:0.6875rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+.meta-val{font-size:0.9375rem;font-weight:500;color:var(--text);}
+.case-hero-image{margin-top:48px;}
+.case-hero-image img{width:100%;border-radius:var(--r) var(--r) 0 0;border:1px solid var(--border);border-bottom:none;}
+.case-hero-image-placeholder{background:linear-gradient(135deg,#E8ECF5,#C8D0E8);height:480px;border-radius:var(--r) var(--r) 0 0;border:1px solid var(--border);border-bottom:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:5rem;}
+.case-hero-image-placeholder p{font-size:0.875rem;color:var(--text-2);font-weight:500;}
+.case-section{padding:72px 0;border-bottom:1px solid var(--border);}
+.section-eyebrow{font-size:0.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+.case-section h2{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:20px;}
+.case-section h2 em{font-style:italic;color:var(--accent);}
+.case-p{font-size:1rem;line-height:1.8;color:var(--text-2);margin-bottom:18px;}
+.case-p strong{color:var(--text);font-weight:500;}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 28px;margin:32px 0;background:var(--accent-lt);border-radius:0 var(--r) var(--r) 0;}
+.pull-quote p{font-family:var(--serif);font-size:1.125rem;font-style:italic;color:var(--text);line-height:1.65;}
+.node-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:28px 0;}
+.node{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--r);padding:24px;}
+.node-num{font-size:0.6875rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;}
+.node-title{font-family:var(--serif);font-size:1.0625rem;font-weight:600;color:var(--text);margin-bottom:8px;}
+.node-body{font-size:0.875rem;color:var(--text-2);line-height:1.65;}
+.outcomes-row{display:flex;gap:16px;margin-top:28px;flex-wrap:wrap;}
+.outcome-chip{flex:1;min-width:120px;text-align:center;padding:20px 16px;background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--r);}
+.oc-val{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--accent);display:block;margin-bottom:4px;letter-spacing:-0.02em;}
+.oc-label{font-size:0.75rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;}
+.keep-reading{padding:80px 0;background:var(--bg-alt);border-top:1px solid var(--border);}
+.keep-reading h2{font-family:var(--serif);font-size:clamp(22px,2.5vw,32px);font-weight:700;letter-spacing:-0.015em;margin-bottom:36px;}
+.kr-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.kr-card{display:block;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;text-decoration:none;color:inherit;}
+.kr-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.08);transform:translateY(-2px);}
+.kr-thumb{height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+.kr-body{padding:20px 24px;}
+.kr-tag{font-size:0.6875rem;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;}
+.kr-title{font-family:var(--serif);font-size:1.0625rem;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.25;}
+.kr-link{font-size:0.8125rem;font-weight:600;color:var(--accent);}
+footer{background:var(--text);color:white;padding:48px 0 36px;}
+.footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.footer-logo{font-family:var(--serif);font-size:1.05rem;color:white;margin-bottom:10px;}
+.footer-tagline{font-size:0.8125rem;color:rgba(255,255,255,0.4);line-height:1.6;}
+.footer-col-label{font-size:0.6875rem;font-weight:700;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:0.875rem;color:rgba(255,255,255,0.6);transition:color 0.15s;}
+.footer-links a:hover{color:white;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:0.8125rem;color:rgba(255,255,255,0.35);}
+@media(max-width:800px){.node-grid,.kr-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr 1fr;}.container,.narrow{padding:0 24px;}.nav-inner{padding:0 24px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Abhimanyu Shukla</a>
+    <div class="nav-prev-next">
+      <a href="case-humanai.html" class="nav-dir">← Previous</a>
+      <a href="case-myday2.html" class="nav-dir">Next →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="case-hero">
+  <div class="narrow">
+    <p class="case-tag">EV Strategy · Interaction Design · Hyundai India Design Center · India 2030</p>
+    <h1 class="case-h1">India's first EV designed around how India actually <em>lives</em></h1>
+    <p class="case-lead"><strong>VAYU — wind · vital force · the breath that moves all things.</strong> A precision-engineered road companion built for India's contradictions — not despite them. Compact EV SUV, sub-₹25L, with 450km+ real-world range.</p>
+    <div class="meta-row">
+      <div class="meta-item"><div class="meta-label">Client</div><div class="meta-val">Hyundai India Design Center</div></div>
+      <div class="meta-item"><div class="meta-label">Research</div><div class="meta-val">10 Interviews · 4 Cities</div></div>
+      <div class="meta-item"><div class="meta-label">Target</div><div class="meta-val">Compact EV SUV &lt;₹25L</div></div>
+      <div class="meta-item"><div class="meta-label">Launch</div><div class="meta-val">Q4 2029 · India</div></div>
+    </div>
+  </div>
+  <div class="container case-hero-image">
+    <img src="images/vayu.png" alt="Hyundai VAYU — EV Design Poster" onerror="this.parentElement.innerHTML='<div class=\'case-hero-image-placeholder\'>🚗<p>Place images/vayu.png here</p></div>'">
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="narrow">
+    <p class="section-eyebrow">Market Context</p>
+    <h2>Why India's EV market needs a <em>fundamentally different</em> vehicle</h2>
+    <p class="case-p">12.55L compact SUV units sold FY24. 65% share of total vehicles occupied by SUVs. 4.3M total passenger vehicles sold FY2024–25. Total electric PVs sold FY2025: 1,07,541 — first time crossing 1,00,000. <strong>95%+ still buying ICE vehicles.</strong></p>
+    <p class="case-p">The EV penetration in compact SUV segment is &lt;5% (₹55,000–65,000). No vehicle under ₹25L currently delivers all five white space criteria simultaneously — the gap VAYU is designed to fill.</p>
+
+    <div class="pull-quote">
+      <p>"VAYU is not just another EV. It is the first EV designed around how India actually lives. Intelligent. Confident. Indian. Electric."</p>
+    </div>
+
+    <div class="node-grid">
+      <div class="node"><div class="node-num">The White Space</div><div class="node-title">5 Criteria Simultaneously</div><div class="node-body">450km+ real range (Indian conditions) · Level 2 ADAS (HDA2) · Flat floor EV architecture · E-GMP 800V architecture · 195mm+ GC (Indian roads). No competitor delivers all 5.</div></div>
+      <div class="node"><div class="node-num">User Research</div><div class="node-title">10 Interviews · 4 Owners · 6 Non-Owners</div><div class="node-body">Age 28–40. ₹12–25 LPA. Bengaluru, Delhi, Mumbai, Pune, Hyderabad. The 6-Stage EV Decision Journey mapped across all respondents.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="narrow">
+    <p class="section-eyebrow">Research Insights</p>
+    <h2>The 6-Stage Decision Journey — longer, more <em>collective,</em> more anxious than petrol</h2>
+    <p class="case-p">Indian EV buying is collective, not individual. One charger failure shapes household perception for months. 900+ digital touchpoints consulted. 2–4 weeks longer than ICE research. Annual trip to Goa at 40% intent killed here.</p>
+
+    <div class="node-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="node"><div class="node-num">Stage 01</div><div class="node-title">Trigger Event</div><div class="node-body">Fuel price spike (₹100+/litre). Colleague buys EV. Mall activation test drive.</div></div>
+      <div class="node"><div class="node-num">Stage 02</div><div class="node-title">Digital Research</div><div class="node-body">900+ digital touchpoints. YouTube, Team-BHP forums, CarDekho comparisons. 2–4 weeks longer than ICE.</div></div>
+      <div class="node"><div class="node-num">Stage 03</div><div class="node-title">Range Maths</div><div class="node-body">Personal route mapping. Commute ×3 buffer. Annual trip to Goa at 40% — intent killed here.</div></div>
+      <div class="node"><div class="node-num">Stage 04</div><div class="node-title">TCO Calculation</div><div class="node-body">₹1.3/km EV vs ₹6.5/km petrol. Break-even 3.5–5.5 years. Higher EMI psychologically punishing.</div></div>
+      <div class="node"><div class="node-num">Stage 05</div><div class="node-title">Apartment Problem</div><div class="node-body">Does my RWA allow charging? 15A socket in my parking? Installation cost? 30% intent killed here.</div></div>
+      <div class="node"><div class="node-num">Stage 06</div><div class="node-title">Family Consensus</div><div class="node-body">Spouse's opinion. Parents' fear. "Go trip kar payenge?" One negative family voice can kill the purchase.</div></div>
+    </div>
+
+    <p class="case-p" style="margin-top:24px;"><strong>Key Insight:</strong> EV buying in India is collective, not individual. The design response: address family anxiety as a primary UX requirement, not an afterthought.</p>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="narrow">
+    <p class="section-eyebrow">The Design Response</p>
+    <h2>One vehicle. Five regional intelligences. <em>Infinite India.</em></h2>
+    <p class="case-p">VAYU is purpose-built around 5 non-negotiable specifications derived directly from research: 450km+ Real-World Range (Indian conditions, not ARAI), Level 2 ADAS (HDA2 highway assist), Purpose-Built EV (E-GMP flat floor, 800V architecture), 195mm+ Ground Clearance, and 20→80% in 35 min fast charging.</p>
+
+    <div class="node-grid">
+      <div class="node"><div class="node-num">Mountains</div><div class="node-title">High Altitude Intelligence</div><div class="node-body">Battery Heating · Snow & Ice Traction · High-altitude range management.</div></div>
+      <div class="node"><div class="node-num">West Coast</div><div class="node-title">High Humidity Protection</div><div class="node-body">Anti-Corrosion · Salt Air Protection · Monsoon drainage systems.</div></div>
+      <div class="node"><div class="node-num">North India</div><div class="node-title">Extreme Heat Management</div><div class="node-body">Anti-Corrosion · Dust Filtration Enhanced · Cabin cooling optimization.</div></div>
+      <div class="node"><div class="node-num">East India</div><div class="node-title">Flood Ready Architecture</div><div class="node-body">500mm Water Wading · Anti-Fungal Systems · Monsoon Drainage design.</div></div>
+    </div>
+
+    <div class="outcomes-row">
+      <div class="outcome-chip"><span class="oc-val">450km+</span><span class="oc-label">Real Range</span></div>
+      <div class="outcome-chip"><span class="oc-val">195mm</span><span class="oc-label">Ground Clearance</span></div>
+      <div class="outcome-chip"><span class="oc-val">Level 2</span><span class="oc-label">ADAS HDA2</span></div>
+      <div class="outcome-chip"><span class="oc-val">Q4 2029</span><span class="oc-label">India Launch</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="keep-reading">
+  <div class="container">
+    <h2>Keep reading</h2>
+    <div class="kr-grid">
+      <a href="case-aham.html" class="kr-card"><div class="kr-thumb" style="background:linear-gradient(135deg,#FFF3E8,#FFE0C8);">🏛</div><div class="kr-body"><div class="kr-tag">Civic Design · ServDes 2025</div><div class="kr-title">Reframing civic sense as Dharma — not enforcement</div><div class="kr-link">Read case study →</div></div></a>
+      <a href="case-myday2.html" class="kr-card"><div class="kr-thumb" style="background:linear-gradient(135deg,#EDE8F5,#D0C8EC);">🤖</div><div class="kr-body"><div class="kr-tag">Agentic UX · Calm Technology</div><div class="kr-title">A productivity system that asks "what capacity do you have?"</div><div class="kr-link">Read case study →</div></div></a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><div class="footer-inner"><div><div class="footer-logo">Abhimanyu Shukla</div><p class="footer-tagline">Behavioral systems designer. M.Des · IIT Hyderabad.</p></div><div><p class="footer-col-label">Navigation</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#case-studies">Case studies</a></li></ul></div><div><p class="footer-col-label">Case Studies</p><ul class="footer-links"><li><a href="case-mbs.html">Mind Body Sync</a></li><li><a href="case-aham.html">Aham Brahmasmi</a></li><li><a href="case-humanai.html">Human × AI</a></li><li><a href="case-vayu.html">Hyundai VAYU</a></li><li><a href="case-myday2.html">myday2</a></li></ul></div><div><p class="footer-col-label">Elsewhere</p><ul class="footer-links"><li><a href="https://www.linkedin.com/in/abhimanyushukla17/" target="_blank">LinkedIn</a></li><li><a href="mailto:abhimanyushukla1709@gmail.com">Email</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copy">© 2025 – Abhimanyu Shukla</p></div></div></footer>
+</body>
+</html>

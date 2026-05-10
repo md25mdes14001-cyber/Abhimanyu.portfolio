@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aham Brahmasmi — Abhimanyu Shukla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-alt:#F8F8F5;--text:#111111;--text-2:#555555;--text-3:#999999;--border:#E5E5E2;--accent:#E07C55;--accent-lt:#FEF0EA;--serif:'Fraunces',Georgia,serif;--sans:'Inter',-apple-system,sans-serif;--max:1120px;--r:14px;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}
+.container{max-width:var(--max);margin:0 auto;padding:0 40px;}.narrow{max-width:760px;margin:0 auto;padding:0 40px;}
+nav{position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:1000;height:64px;}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 40px;height:100%;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--serif);font-size:1.05rem;font-weight:400;}
+.nav-prev-next{display:flex;gap:12px;}
+.nav-dir{font-size:0.8125rem;font-weight:500;color:var(--text-3);padding:6px 14px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s;}
+.nav-dir:hover{border-color:var(--text-2);color:var(--text);}
+.case-hero{padding:64px 0 0;border-bottom:1px solid var(--border);}
+.case-tag{font-size:0.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+.case-h1{font-family:var(--serif);font-size:clamp(32px,5vw,56px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;}
+.case-h1 em{font-style:italic;color:var(--accent);}
+.case-lead{font-size:1.0625rem;line-height:1.75;color:var(--text-2);max-width:680px;margin-bottom:32px;}
+.case-lead strong{color:var(--text);font-weight:500;}
+.meta-row{display:flex;gap:32px;flex-wrap:wrap;padding:24px 0;border-top:1px solid var(--border);margin-top:12px;}
+.meta-label{font-size:0.6875rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+.meta-val{font-size:0.9375rem;font-weight:500;color:var(--text);}
+.case-hero-image{margin-top:48px;}
+.case-hero-image img{width:100%;border-radius:var(--r) var(--r) 0 0;border:1px solid var(--border);border-bottom:none;}
+.case-hero-image-placeholder{background:linear-gradient(135deg,#FFF3E8,#FFE0C8);height:480px;border-radius:var(--r) var(--r) 0 0;border:1px solid var(--border);border-bottom:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:5rem;}
+.case-hero-image-placeholder p{font-size:0.875rem;color:var(--text-2);font-weight:500;}
+.case-section{padding:72px 0;border-bottom:1px solid var(--border);}
+.section-eyebrow{font-size:0.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+.case-section h2{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:20px;}
+.case-section h2 em{font-style:italic;color:var(--accent);}
+.case-p{font-size:1rem;line-height:1.8;color:var(--text-2);margin-bottom:18px;}
+.case-p strong{color:var(--text);font-weight:500;}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 28px;margin:32px 0;background:var(--accent-lt);border-radius:0 var(--r) var(--r) 0;}
+.pull-quote p{font-family:var(--serif);font-size:1.125rem;font-style:italic;color:var(--text);line-height:1.65;}
+.node-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:28px 0;}
+.node{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--r);padding:24px;}
+.node-num{font-size:0.6875rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;}
+.node-title{font-family:var(--serif);font-size:1.0625rem;font-weight:600;color:var(--text);margin-bottom:8px;}
+.node-body{font-size:0.875rem;color:var(--text-2);line-height:1.65;}
+.outcomes-row{display:flex;gap:16px;margin-top:28px;flex-wrap:wrap;}
+.outcome-chip{flex:1;min-width:120px;text-align:center;padding:20px 16px;background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--r);}
+.oc-val{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--accent);display:block;margin-bottom:4px;letter-spacing:-0.02em;}
+.oc-label{font-size:0.75rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;}
+.keep-reading{padding:80px 0;background:var(--bg-alt);border-top:1px solid var(--border);}
+.keep-reading h2{font-family:var(--serif);font-size:clamp(22px,2.5vw,32px);font-weight:700;letter-spacing:-0.015em;margin-bottom:36px;}
+.kr-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.kr-card{display:block;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;text-decoration:none;color:inherit;}
+.kr-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.08);transform:translateY(-2px);}
+.kr-thumb{height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+.kr-body{padding:20px 24px;}
+.kr-tag{font-size:0.6875rem;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;}
+.kr-title{font-family:var(--serif);font-size:1.0625rem;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.25;}
+.kr-link{font-size:0.8125rem;font-weight:600;color:var(--accent);}
+footer{background:var(--text);color:white;padding:48px 0 36px;}
+.footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.footer-logo{font-family:var(--serif);font-size:1.05rem;color:white;margin-bottom:10px;}
+.footer-tagline{font-size:0.8125rem;color:rgba(255,255,255,0.4);line-height:1.6;}
+.footer-col-label{font-size:0.6875rem;font-weight:700;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:0.875rem;color:rgba(255,255,255,0.6);transition:color 0.15s;}
+.footer-links a:hover{color:white;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:0.8125rem;color:rgba(255,255,255,0.35);}
+@media(max-width:800px){.node-grid,.kr-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr 1fr;}.container,.narrow{padding:0 24px;}.nav-inner{padding:0 24px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Abhimanyu Shukla</a>
+    <div class="nav-prev-next">
+      <a href="case-mbs.html" class="nav-dir">← Previous</a>
+      <a href="case-humanai.html" class="nav-dir">Next →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="case-hero">
+  <div class="narrow">
+    <p class="case-tag">Civic Design · Behavioral Systems · ServDes 2025 · Presented Internationally</p>
+    <h1 class="case-h1">Reframing civic sense as <em>Dharma</em> — not enforcement</h1>
+    <p class="case-lead">A behavior-change platform rooted in Vedic wisdom and behavioral science. <strong>Civic behavior doesn't fail from lack of awareness — it fails from lack of design.</strong> Presented at the 9th International Service Design Conference (ServDes 2025).</p>
+    <div class="meta-row">
+      <div class="meta-item"><div class="meta-label">Role</div><div class="meta-val">Lead Designer & Researcher</div></div>
+      <div class="meta-item"><div class="meta-label">Presented At</div><div class="meta-val">ServDes 2025</div></div>
+      <div class="meta-item"><div class="meta-label">Framework</div><div class="meta-val">5-JR · 4-E Model</div></div>
+      <div class="meta-item"><div class="meta-label">Scale</div><div class="meta-val">Urban India · Civic Systems</div></div>
+    </div>
+  </div>
+  <div class="container case-hero-image">
+    <img src="images/aham.png" alt="Aham Brahmasmi — Infographic Poster" onerror="this.parentElement.innerHTML='<div class=\'case-hero-image-placeholder\'>🏛<p>Place images/aham.png here</p></div>'">
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="narrow">
+    <p class="section-eyebrow">The Problem</p>
+    <h2>Knowledge exists. Behavior <em>doesn't follow.</em></h2>
+    <p class="case-p">Littering, traffic violations, open defecation, noise pollution, civic irresponsibility — Indians already know the rules. Awareness campaigns have never produced lasting behavior change. <strong>Civic sense is not a knowledge gap. It is a behavior gap.</strong></p>
+    <p class="case-p">The evidence is clear: 40% of households with a working toilet still practice open defecation (NFHS-5). 68.5% of road accident fatalities are in rural areas (MORTH, 2022). ₹1.47 Lakh Cr/yr GDP loss due to traffic accidents alone (NITI Aayog). 13,600+ enforcement actions for littering in Singapore in 2025 — and 60% of Indians pray daily, meaning spiritual identity is widely active and deeply motivating.</p>
+
+    <div class="pull-quote">
+      <p>"When I recognise my divine nature, my actions must be worthy of divinity. Small actions. Big impact. Together, we change our cities and our destiny."</p>
+    </div>
+
+    <div class="node-grid">
+      <div class="node">
+        <div class="node-num">Infrastructure Alone Fails</div>
+        <div class="node-title">RCTs in MP & Odisha</div>
+        <div class="node-body">Increased latrine coverage from 9% to 63% — but did not improve usage without behavior change. Infrastructure without identity and habit systems fails.</div>
+      </div>
+      <div class="node">
+        <div class="node-num">Awareness Campaigns Fail</div>
+        <div class="node-title">Information ≠ Action</div>
+        <div class="node-body">Citizens already know the rules. Information alone has never produced lasting behavior change. Awareness without motivation and reinforcement does not sustain.</div>
+      </div>
+      <div class="node">
+        <div class="node-num">Punishment Alone Fails</div>
+        <div class="node-title">Certainty > Severity</div>
+        <div class="node-body">Rare but severe punishments create fear-based compliance that collapses without monitoring. Certainty of detection matters more than severity of punishment.</div>
+      </div>
+      <div class="node">
+        <div class="node-num">Behavioral Science Insight</div>
+        <div class="node-title">EAST Framework</div>
+        <div class="node-body">People change when actions are Easy, Attractive, Social, and Timely — connected to identity and visible impact. This is the design target.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="narrow">
+    <p class="section-eyebrow">The Solution</p>
+    <h2>The 5-JR Framework: <em>Vedic wisdom</em> meets behavioral science</h2>
+    <p class="case-p">The platform integrates five Vedic principles — Saucha (cleanliness), Ahimsa (non-violence), Maryada (discipline), Rta/Dharma (social order), and Bhumi-Seva (environmental care) — with evidence-based behavioral mechanisms.</p>
+
+    <div class="node-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="node"><div class="node-num">Saucha</div><div class="node-title">Cleanliness</div><div class="node-body">Clean surroundings, pure mind, healthy nation.</div></div>
+      <div class="node"><div class="node-num">Ahimsa</div><div class="node-title">Non-Violence</div><div class="node-body">Respect life, ensure safety, stop harm.</div></div>
+      <div class="node"><div class="node-num">Maryada</div><div class="node-title">Discipline</div><div class="node-body">Respect rules, follow queues, value public spaces.</div></div>
+      <div class="node"><div class="node-num">Rta/Dharma</div><div class="node-title">Social Order</div><div class="node-body">Do your duty. Follow what is right.</div></div>
+      <div class="node"><div class="node-num">Bhumi-Seva</div><div class="node-title">Environmental Care</div><div class="node-body">Protect nature, serve the earth.</div></div>
+      <div class="node"><div class="node-num">4-E Model</div><div class="node-title">Sustainable Change</div><div class="node-body">Easy · Attractive · Social · Timely. The quadrant model for sustainable behavior change at scale.</div></div>
+    </div>
+
+    <h2 style="margin-top:40px;">Spiritual to Behavior <em>Mapping</em></h2>
+    <p class="case-p">Each spiritual principle maps directly to a psychological mechanism, which maps to a measurable civic behavior. Dharma → Duty Identity → Queue discipline. Karma → Consequence Salience → Anti-littering. Seva → Warm Glow Effect → Volunteering. Ahimsa → Empathy Activation → Safe driving.</p>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="narrow">
+    <p class="section-eyebrow">Impact at Scale</p>
+    <h2>The change we aim to <em>create</em></h2>
+    <p class="case-p">Based on behavioral science interventions and Indian case study data, the projected impact within 12–18 months in pilot cities includes 30–40% reduction in littering, 25–35% increase in public toilet usage, 20–30% decrease in traffic violations, 15–25% increase in civic participation, and 10–20% improvement in waste segregation.</p>
+    <p class="case-p">The projected ROI is 12:1 on enforcement and behavior change investment combined, with ₹20,000+ Cr/year potential savings in healthcare and productivity at national scale.</p>
+
+    <div class="outcomes-row">
+      <div class="outcome-chip"><span class="oc-val">12:1</span><span class="oc-label">Projected ROI</span></div>
+      <div class="outcome-chip"><span class="oc-val">30–40%</span><span class="oc-label">Littering Reduction</span></div>
+      <div class="outcome-chip"><span class="oc-val">₹20K Cr</span><span class="oc-label">Annual Savings</span></div>
+      <div class="outcome-chip"><span class="oc-val">ServDes</span><span class="oc-label">2025 Presented</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="keep-reading">
+  <div class="container">
+    <h2>Keep reading</h2>
+    <div class="kr-grid">
+      <a href="case-mbs.html" class="kr-card">
+        <div class="kr-thumb" style="background:linear-gradient(135deg,#FFE8E0,#FECFBF);">🧬</div>
+        <div class="kr-body"><div class="kr-tag">AI-Integrated Wellbeing</div><div class="kr-title">A gamified wellbeing system that doesn't optimize engagement</div><div class="kr-link">Read case study →</div></div>
+      </a>
+      <a href="case-vayu.html" class="kr-card">
+        <div class="kr-thumb" style="background:linear-gradient(135deg,#E8ECF5,#C8D0E8);">🚗</div>
+        <div class="kr-body"><div class="kr-tag">EV Strategy · India 2030</div><div class="kr-title">India's first EV designed around how India actually lives</div><div class="kr-link">Read case study →</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div><div class="footer-logo">Abhimanyu Shukla</div><p class="footer-tagline">Behavioral systems designer. M.Des · IIT Hyderabad.</p></div>
+      <div><p class="footer-col-label">Navigation</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#case-studies">Case studies</a></li></ul></div>
+      <div><p class="footer-col-label">Case Studies</p><ul class="footer-links"><li><a href="case-mbs.html">Mind Body Sync</a></li><li><a href="case-aham.html">Aham Brahmasmi</a></li><li><a href="case-humanai.html">Human × AI</a></li><li><a href="case-vayu.html">Hyundai VAYU</a></li><li><a href="case-myday2.html">myday2</a></li></ul></div>
+      <div><p class="footer-col-label">Elsewhere</p><ul class="footer-links"><li><a href="https://www.linkedin.com/in/abhimanyushukla17/" target="_blank">LinkedIn</a></li><li><a href="mailto:abhimanyushukla1709@gmail.com">Email</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copy">© 2025 – Abhimanyu Shukla</p></div>
+  </div>
+</footer>
+</body>
+</html>

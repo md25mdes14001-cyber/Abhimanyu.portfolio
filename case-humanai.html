@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human Relationships in the AI Era — Abhimanyu Shukla</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-alt:#F8F8F5;--text:#111111;--text-2:#555555;--text-3:#999999;--border:#E5E5E2;--accent:#E07C55;--accent-lt:#FEF0EA;--serif:'Fraunces',Georgia,serif;--sans:'Inter',-apple-system,sans-serif;--max:1120px;--r:14px;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}
+.container{max-width:var(--max);margin:0 auto;padding:0 40px;}.narrow{max-width:760px;margin:0 auto;padding:0 40px;}
+nav{position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:1000;height:64px;}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 40px;height:100%;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--serif);font-size:1.05rem;font-weight:400;}
+.nav-prev-next{display:flex;gap:12px;}
+.nav-dir{font-size:0.8125rem;font-weight:500;color:var(--text-3);padding:6px 14px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s;}
+.nav-dir:hover{border-color:var(--text-2);color:var(--text);}
+.case-hero{padding:64px 0 0;border-bottom:1px solid var(--border);}
+.case-tag{font-size:0.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+.case-h1{font-family:var(--serif);font-size:clamp(32px,5vw,56px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;}
+.case-h1 em{font-style:italic;color:var(--accent);}
+.case-lead{font-size:1.0625rem;line-height:1.75;color:var(--text-2);max-width:680px;margin-bottom:32px;}
+.case-lead strong{color:var(--text);font-weight:500;}
+.meta-row{display:flex;gap:32px;flex-wrap:wrap;padding:24px 0;border-top:1px solid var(--border);margin-top:12px;}
+.meta-label{font-size:0.6875rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+.meta-val{font-size:0.9375rem;font-weight:500;color:var(--text);}
+.case-hero-image{margin-top:48px;}
+.case-hero-image img{width:100%;border-radius:var(--r) var(--r) 0 0;border:1px solid var(--border);border-bottom:none;}
+.case-hero-image-placeholder{background:linear-gradient(135deg,#E8F5F5,#C8E8E6);height:480px;border-radius:var(--r) var(--r) 0 0;border:1px solid var(--border);border-bottom:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:5rem;}
+.case-hero-image-placeholder p{font-size:0.875rem;color:var(--text-2);font-weight:500;}
+.case-section{padding:72px 0;border-bottom:1px solid var(--border);}
+.section-eyebrow{font-size:0.75rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;}
+.case-section h2{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:20px;}
+.case-section h2 em{font-style:italic;color:var(--accent);}
+.case-p{font-size:1rem;line-height:1.8;color:var(--text-2);margin-bottom:18px;}
+.case-p strong{color:var(--text);font-weight:500;}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 28px;margin:32px 0;background:var(--accent-lt);border-radius:0 var(--r) var(--r) 0;}
+.pull-quote p{font-family:var(--serif);font-size:1.125rem;font-style:italic;color:var(--text);line-height:1.65;}
+.node-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:28px 0;}
+.node{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--r);padding:24px;}
+.node-num{font-size:0.6875rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;}
+.node-title{font-family:var(--serif);font-size:1.0625rem;font-weight:600;color:var(--text);margin-bottom:8px;}
+.node-body{font-size:0.875rem;color:var(--text-2);line-height:1.65;}
+.outcomes-row{display:flex;gap:16px;margin-top:28px;flex-wrap:wrap;}
+.outcome-chip{flex:1;min-width:120px;text-align:center;padding:20px 16px;background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--r);}
+.oc-val{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--accent);display:block;margin-bottom:4px;letter-spacing:-0.02em;}
+.oc-label{font-size:0.75rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;}
+.score-table{width:100%;border-collapse:collapse;margin:20px 0;}
+.score-table th{font-size:0.75rem;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.06em;padding:10px 16px;text-align:left;border-bottom:2px solid var(--border);}
+.score-table td{font-size:0.875rem;color:var(--text-2);padding:12px 16px;border-bottom:1px solid var(--border-2,#EBEBEB);}
+.score-table td:first-child{font-weight:500;color:var(--text);}
+.score-val{font-weight:700;color:var(--accent);}
+.keep-reading{padding:80px 0;background:var(--bg-alt);border-top:1px solid var(--border);}
+.keep-reading h2{font-family:var(--serif);font-size:clamp(22px,2.5vw,32px);font-weight:700;letter-spacing:-0.015em;margin-bottom:36px;}
+.kr-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.kr-card{display:block;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;text-decoration:none;color:inherit;}
+.kr-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.08);transform:translateY(-2px);}
+.kr-thumb{height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+.kr-body{padding:20px 24px;}
+.kr-tag{font-size:0.6875rem;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;}
+.kr-title{font-family:var(--serif);font-size:1.0625rem;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.25;}
+.kr-link{font-size:0.8125rem;font-weight:600;color:var(--accent);}
+footer{background:var(--text);color:white;padding:48px 0 36px;}
+.footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.footer-logo{font-family:var(--serif);font-size:1.05rem;color:white;margin-bottom:10px;}
+.footer-tagline{font-size:0.8125rem;color:rgba(255,255,255,0.4);line-height:1.6;}
+.footer-col-label{font-size:0.6875rem;font-weight:700;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-size:0.875rem;color:rgba(255,255,255,0.6);transition:color 0.15s;}
+.footer-links a:hover{color:white;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:0.8125rem;color:rgba(255,255,255,0.35);}
+@media(max-width:800px){.node-grid,.kr-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr 1fr;}.container,.narrow{padding:0 24px;}.nav-inner{padding:0 24px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Abhimanyu Shukla</a>
+    <div class="nav-prev-next">
+      <a href="case-aham.html" class="nav-dir">← Previous</a>
+      <a href="case-vayu.html" class="nav-dir">Next →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="case-hero">
+  <div class="narrow">
+    <p class="case-tag">Futures Design · Strategic UX · LFC Foresight Study 2024–2040</p>
+    <h1 class="case-h1">Designing AI companions that build <em>human connection,</em> not replace it</h1>
+    <p class="case-lead">1 in 2 young adults feel lonely regularly. 5+ hours daily on screens, not with people. 30% decline in social interactions since 2003. <strong>This is not a desire problem. It is a relational capacity crisis.</strong> We designed the Human-First AI Companion — the first AI that makes itself unnecessary.</p>
+    <div class="meta-row">
+      <div class="meta-item"><div class="meta-label">Type</div><div class="meta-val">Foresight Research</div></div>
+      <div class="meta-item"><div class="meta-label">Horizon</div><div class="meta-val">2024–2040</div></div>
+      <div class="meta-item"><div class="meta-label">Method</div><div class="meta-val">PESTLE · Scenario Building</div></div>
+      <div class="meta-item"><div class="meta-label">Pilot</div><div class="meta-val">500 Participants · RCT</div></div>
+    </div>
+  </div>
+  <div class="container case-hero-image">
+    <img src="images/humanai.png" alt="Human Relationships in the AI Era" onerror="this.parentElement.innerHTML='<div class=\'case-hero-image-placeholder\'>🤝<p>Place images/humanai.png here</p></div>'">
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="narrow">
+    <p class="section-eyebrow">The Problem</p>
+    <h2>The 55-Point Gap — a <em>relational capacity crisis</em></h2>
+    <p class="case-p">Young adults want meaningful partnership but lack the skills, confidence, and opportunities to pursue it. <strong>1 in 2</strong> young adults feel lonely regularly (UCLA Loneliness Scale). <strong>5+ hours</strong> daily on screens, not with people. <strong>30% decline</strong> in social interactions since 2003 (American Trends Panel). <strong>63%</strong> of men under 30 are single (US).</p>
+    <p class="case-p">Meanwhile, the AI companion market is exploding — 10M+ users globally, projected $12.5B by 2032. The risk: AI companions that replace human connection rather than build relational capacity toward it.</p>
+
+    <div class="pull-quote">
+      <p>"Technology should build bridges to humans, not walls around us."</p>
+    </div>
+
+    <div class="node-grid">
+      <div class="node"><div class="node-num">Market Size</div><div class="node-title">10M+ AI companion users</div><div class="node-body">$12.5B AI companion market by 2032. Rapid Tech Development PESTLE score: 5/5. Social Cohesion Decline: 5/5. Ageing Populations: 5/5.</div></div>
+      <div class="node"><div class="node-num">PESTLE Scores</div><div class="node-title">5 of 6 Dimensions at Max Risk</div><div class="node-body">Rapid Tech Development (5/5), Social Cohesion Decline (5/5), Ageing Populations (5/5), AI Companion Market (4/5), Regulatory Landscape (3/5), Economic Inequality (3/5).</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="narrow">
+    <p class="section-eyebrow">Research Methodology</p>
+    <h2>Foresight study across <em>6 dimensions,</em> 3 future scenarios</h2>
+    <p class="case-p">Horizon Scanning across 6 dimensions to identify key drivers shaping 2024–2040. Three divergent futures modeled with impact and probability assessment. Four prototyped personas grounded in research signals and real-world contexts. Eight actionable strategic commitments across design, policy, research, and governance.</p>
+
+    <div class="node-grid" style="grid-template-columns:repeat(4,1fr);">
+      <div class="node"><div class="node-num">Stage 01</div><div class="node-title">Horizon Scanning</div><div class="node-body">PESTLE across 6 dimensions</div></div>
+      <div class="node"><div class="node-num">Stage 02</div><div class="node-title">Scenario Building</div><div class="node-body">3 divergent futures to 2040</div></div>
+      <div class="node"><div class="node-num">Stage 03</div><div class="node-title">Future Personas</div><div class="node-body">4 prototyped real-world users</div></div>
+      <div class="node"><div class="node-num">Stage 04</div><div class="node-title">Strategic Commitments</div><div class="node-body">8 actionable design commitments</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="narrow">
+    <p class="section-eyebrow">The Solution</p>
+    <h2>Human-First AI Companion — <em>optimizing for relational flourishing,</em> not engagement</h2>
+    <p class="case-p">The first AI companion designed to make itself unnecessary. We optimize for relational flourishing, not engagement. Three core design interventions address the relational capacity crisis systematically.</p>
+
+    <div class="node-grid">
+      <div class="node"><div class="node-num">01 · Micro-Date Protocol</div><div class="node-title">AI → Practice → Human</div><div class="node-body">Graduated practice before real dates. AI coaching → 3 practice modes → human match. Build confidence through safe practice. The AI becomes a bridge, not a destination.</div></div>
+      <div class="node"><div class="node-num">02 · Relational Health Hours</div><div class="node-title">2-Hour Daily AI Limit</div><div class="node-body">Human interaction credits and RHH dashboard tracking. Encourage real-world connection by design. The system measures and rewards offline social time.</div></div>
+      <div class="node"><div class="node-num">03 · Deliberate Friction</div><div class="node-title">AI Disagrees. Slower Responses.</div><div class="node-body">Designed exit at Day 90. Build resilience and independence. The AI is designed to push users toward humans — not pull them toward itself.</div></div>
+      <div class="node"><div class="node-num">Longitudinal Pilot</div><div class="node-title">3-Year Study · 500 Participants</div><div class="node-body">RCT Design. Measure: UCLA Scale, Social Network Index, Confidence Rating. Track: Human Connection Score (HCS). Goal: 40%+ improvement from baseline. Final assessment at 36 months.</div></div>
+    </div>
+
+    <div class="outcomes-row">
+      <div class="outcome-chip"><span class="oc-val">Self</span><span class="oc-label">Stronger Awareness</span></div>
+      <div class="outcome-chip"><span class="oc-val">Real</span><span class="oc-label">World Interactions</span></div>
+      <div class="outcome-chip"><span class="oc-val">+40%</span><span class="oc-label">HCS Goal</span></div>
+      <div class="outcome-chip"><span class="oc-val">Human</span><span class="oc-label">Dignity First</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="keep-reading">
+  <div class="container">
+    <h2>Keep reading</h2>
+    <div class="kr-grid">
+      <a href="case-mbs.html" class="kr-card"><div class="kr-thumb" style="background:linear-gradient(135deg,#FFE8E0,#FECFBF);">🧬</div><div class="kr-body"><div class="kr-tag">AI-Integrated Wellbeing</div><div class="kr-title">A gamified wellbeing system that doesn't optimize engagement</div><div class="kr-link">Read case study →</div></div></a>
+      <a href="case-myday2.html" class="kr-card"><div class="kr-thumb" style="background:linear-gradient(135deg,#EDE8F5,#D0C8EC);">🤖</div><div class="kr-body"><div class="kr-tag">Agentic UX · Calm Technology</div><div class="kr-title">A productivity system that asks "what capacity do you have?"</div><div class="kr-link">Read case study →</div></div></a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container"><div class="footer-inner"><div><div class="footer-logo">Abhimanyu Shukla</div><p class="footer-tagline">Behavioral systems designer. M.Des · IIT Hyderabad.</p></div><div><p class="footer-col-label">Navigation</p><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#case-studies">Case studies</a></li></ul></div><div><p class="footer-col-label">Case Studies</p><ul class="footer-links"><li><a href="case-mbs.html">Mind Body Sync</a></li><li><a href="case-aham.html">Aham Brahmasmi</a></li><li><a href="case-humanai.html">Human × AI</a></li><li><a href="case-vayu.html">Hyundai VAYU</a></li><li><a href="case-myday2.html">myday2</a></li></ul></div><div><p class="footer-col-label">Elsewhere</p><ul class="footer-links"><li><a href="https://www.linkedin.com/in/abhimanyushukla17/" target="_blank">LinkedIn</a></li><li><a href="mailto:abhimanyushukla1709@gmail.com">Email</a></li></ul></div></div><div class="footer-bottom"><p class="footer-copy">© 2025 – Abhimanyu Shukla</p></div></div></footer>
+</body>
+</html>

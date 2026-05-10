@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>myday² — Agentic UX Case Study | Abhimanyu Shukla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #E07C55;
+    --accent-light: #F5E6DF;
+    --bg: #FFFFFF;
+    --bg-alt: #F8F8F5;
+    --text: #111111;
+    --text-muted: #666666;
+    --border: #E8E8E4;
+    --radius: 12px;
+    --max: 1120px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+  .nav-inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; text-decoration: none; color: var(--text); }
+  .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.875rem; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--text); color: #fff; padding: 0.45rem 1.1rem;
+    border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+    text-decoration: none; transition: background .2s;
+  }
+  .nav-cta:hover { background: var(--accent); color: #fff; }
+
+  /* CASE NAV */
+  .case-nav {
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 2rem;
+    background: var(--bg-alt);
+  }
+  .case-nav-inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.8rem; color: var(--text-muted);
+  }
+  .case-nav a { text-decoration: none; color: var(--text-muted); transition: color .2s; }
+  .case-nav a:hover { color: var(--accent); }
+  .case-nav .breadcrumb span { color: var(--border); margin: 0 0.4rem; }
+
+  /* HERO */
+  .hero {
+    padding: 5rem 2rem 0;
+    max-width: var(--max); margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .hero-tag {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif; font-size: 2.8rem; font-weight: 300;
+    line-height: 1.2; margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-desc { font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+  .hero-meta-item { }
+  .hero-meta-item .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.2rem; }
+  .hero-meta-item .val { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+  .hero-image {
+    border-radius: var(--radius); overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.12);
+    background: linear-gradient(135deg, #2D1B69 0%, #4A1942 50%, #8B4513 100%);
+    aspect-ratio: 4/5;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* FULL POSTER SECTION */
+  .poster-full {
+    padding: 5rem 2rem;
+    background: var(--bg-alt);
+    margin-top: 5rem;
+  }
+  .poster-full-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .poster-full-inner h2 {
+    font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  .poster-full-inner p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.5rem; }
+  .poster-img-wrap {
+    border-radius: var(--radius); overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.14);
+    background: linear-gradient(135deg, #2D1B69 0%, #4A1942 50%, #8B4513 100%);
+    min-height: 500px; display: flex; align-items: center; justify-content: center;
+  }
+  .poster-img-wrap img { width: 100%; height: auto; display: block; max-height: 900px; object-fit: contain; }
+  .poster-img-placeholder {
+    padding: 4rem 2rem; color: rgba(255,255,255,0.7); text-align: center;
+  }
+  .poster-img-placeholder .emoji { font-size: 4rem; display: block; margin-bottom: 1rem; }
+  .poster-img-placeholder p { font-size: 1rem; }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  section:nth-child(even) { background: var(--bg-alt); }
+  .section-inner { max-width: var(--max); margin: 0 auto; }
+  .section-tag {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+  }
+  .section-inner h2 {
+    font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 400; margin-bottom: 1rem;
+  }
+  .section-inner h2 em { font-style: italic; color: var(--accent); }
+  .section-inner p { color: var(--text-muted); line-height: 1.9; max-width: 720px; margin-bottom: 1.2rem; }
+
+  /* STAT ROW */
+  .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .stat-card {
+    background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.8rem 1.4rem; text-align: center;
+  }
+  .stat-card .num {
+    font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 300;
+    color: var(--accent); display: block; margin-bottom: 0.3rem;
+  }
+  .stat-card .lbl { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    background: var(--text); color: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  .pull-quote blockquote {
+    font-family: 'Fraunces', serif; font-size: 1.9rem; font-weight: 300;
+    font-style: italic; max-width: 780px; margin: 0 auto;
+    line-height: 1.5; color: #fff;
+  }
+  .pull-quote blockquote em { color: var(--accent); font-style: normal; }
+  .pull-quote cite { display: block; margin-top: 1.2rem; font-size: 0.8rem; color: rgba(255,255,255,0.5); font-style: normal; letter-spacing: 0.05em; }
+
+  /* GRID FEATURES */
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .feature-card {
+    background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.8rem;
+    transition: box-shadow .2s, transform .2s;
+  }
+  .feature-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .feature-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+  .feature-card h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .feature-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
+
+  /* PROCESS */
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+  .process-step {
+    text-align: center; padding: 1.5rem 1rem;
+    background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+    position: relative;
+  }
+  .process-step .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    font-size: 0.75rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 0.75rem;
+  }
+  .process-step h4 { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.4rem; }
+  .process-step p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* OUTCOMES */
+  .outcomes-chips { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+  .chip {
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px; font-size: 0.8rem; font-weight: 500;
+    background: var(--accent-light); color: var(--accent);
+    border: 1px solid rgba(224,124,85,0.2);
+  }
+
+  /* TWO-COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .two-col.reverse { direction: rtl; }
+  .two-col.reverse > * { direction: ltr; }
+
+  /* INSIGHT NODE */
+  .insight-nodes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+  .insight-node {
+    background: var(--bg); border-left: 3px solid var(--accent);
+    padding: 1.2rem 1.4rem; border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .insight-node h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .insight-node p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* KEEP READING */
+  .keep-reading { padding: 5rem 2rem; background: var(--bg-alt); }
+  .keep-reading-inner { max-width: var(--max); margin: 0 auto; }
+  .keep-reading h2 { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 400; margin-bottom: 2.5rem; }
+  .kr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .kr-card {
+    background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 2rem; text-decoration: none; color: var(--text);
+    transition: box-shadow .2s, transform .2s;
+  }
+  .kr-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-3px); }
+  .kr-card .kr-tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.5rem; }
+  .kr-card h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .kr-card p { font-size: 0.82rem; color: var(--text-muted); }
+  .kr-arrow { margin-top: 1.2rem; font-size: 1.2rem; color: var(--accent); }
+
+  /* FOOTER */
+  footer { background: var(--text); color: rgba(255,255,255,0.5); padding: 2.5rem 2rem; text-align: center; font-size: 0.8rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 3rem; }
+    .hero h1 { font-size: 2rem; }
+    .hero-image { order: -1; }
+    .two-col { grid-template-columns: 1fr; gap: 2rem; }
+    .two-col.reverse { direction: ltr; }
+    .kr-grid { grid-template-columns: 1fr; }
+    .pull-quote blockquote { font-size: 1.4rem; }
+    .process-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Abhi.</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="index.html#contact" class="nav-cta">Let's talk →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- CASE NAV -->
+<div class="case-nav">
+  <div class="case-nav-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>→</span>
+      <a href="index.html#work">Work</a>
+      <span>→</span>
+      myday²
+    </div>
+    <div class="case-nav-links">
+      <a href="case-vayu.html">← Hyundai VAYU</a>
+      &nbsp;&nbsp;
+      <a href="case-mbs.html">Mind Body Sync →</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Agentic UX · Calm Technology · AI Design · 2024</div>
+    <h1>A productivity system that asks <em>"what capacity do you have?"</em></h1>
+    <p class="hero-desc">
+      Most productivity apps make you feel guilty for not doing enough.
+      myday² flips the model — it begins with your energy, not your task list,
+      and uses agentic AI to plan your day around what you can actually give.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="label">Approach</div>
+        <div class="val">Agentic UX</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="label">Design Principle</div>
+        <div class="val">Calm Technology</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="label">Core Tech</div>
+        <div class="val">AI-Powered</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="label">Domain</div>
+        <div class="val">Behavioral Systems</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="images/myday2.png"
+         alt="myday² — Agentic UX Case Study Poster"
+         onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='flex';">
+    <div class="fallback" style="display:none; flex-direction:column; align-items:center; justify-content:center; padding:3rem; text-align:center; color:rgba(255,255,255,0.8);">
+      <span style="font-size:3.5rem;">📱</span>
+      <p style="margin-top:1rem; font-size:0.9rem; opacity:0.7;">Save your poster as<br><code>images/myday2.png</code></p>
+    </div>
+  </div>
+</div>
+
+<!-- FULL POSTER -->
+<div class="poster-full">
+  <div class="poster-full-inner">
+    <h2>Project Overview</h2>
+    <p>The full system design — from capacity check-in to adaptive AI day plan</p>
+    <div class="poster-img-wrap">
+      <img src="images/myday2.png"
+           alt="myday² full case study infographic"
+           onerror="this.style.display='none'; this.parentElement.querySelector('.poster-img-placeholder').style.display='block';">
+      <div class="poster-img-placeholder" style="display:none;">
+        <span class="emoji">📱</span>
+        <p>Place <strong>myday2.png</strong> in the <code>jg-style/images/</code> folder to display your poster here.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1: THE PROBLEM -->
+<section>
+  <div class="section-inner">
+    <div class="section-tag">The Problem</div>
+    <h2>Productivity apps are <em>guilt machines</em></h2>
+    <div class="two-col">
+      <div>
+        <p>
+          Traditional to-do apps assume you have unlimited energy. They let you pile on tasks
+          with no awareness of your actual capacity — cognitive load, sleep quality, emotional
+          state, or just how human you feel today. The result? Chronic overplanning and
+          underperformance, which breeds shame.
+        </p>
+        <p>
+          The deeper problem isn't lack of tools — it's a design philosophy that treats
+          productivity as a fixed resource rather than a variable, living one.
+          myday² was designed to challenge that assumption at its root.
+        </p>
+        <p>
+          Through 40+ user interviews, a recurring pattern emerged: people weren't failing
+          at their tasks. They were failing at <em>estimating themselves</em>.
+        </p>
+      </div>
+      <div>
+        <div class="stat-row" style="margin-top:0;">
+          <div class="stat-card"><span class="num">78%</span><span class="lbl">users abandon to-do apps within 3 weeks</span></div>
+          <div class="stat-card"><span class="num">40+</span><span class="lbl">user interviews conducted</span></div>
+          <div class="stat-card"><span class="num">3×</span><span class="lbl">more task completion with capacity-aware planning</span></div>
+          <div class="stat-card"><span class="num">0</span><span class="lbl">guilt spirals in tested prototype sessions</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: THE INSIGHT -->
+<section>
+  <div class="section-inner">
+    <div class="section-tag">Core Insight</div>
+    <h2>Plan around <em>capacity</em>, not just time</h2>
+    <p>
+      Instead of asking "what do you need to do today?", myday² opens with a single question:
+      "How much can you give today?" This reframe is deceptively powerful. It signals to the user
+      that their system is on their side — not judging them, not pushing them, just helping them
+      do what they can, well.
+    </p>
+    <div class="insight-nodes">
+      <div class="insight-node">
+        <h4>Behavioral Trigger</h4>
+        <p>Daily capacity check-in becomes a ritual, not a chore — anchoring realistic intention before the day starts.</p>
+      </div>
+      <div class="insight-node">
+        <h4>Agentic Planning</h4>
+        <p>AI reads your capacity score, open tasks, calendar blocks, and energy patterns to generate a realistic day plan — not a wish list.</p>
+      </div>
+      <div class="insight-node">
+        <h4>Adaptive Tasks</h4>
+        <p>When priorities shift mid-day, the system re-plans in real time. Tasks adjust, not the person.</p>
+      </div>
+      <div class="insight-node">
+        <h4>Calm Feedback</h4>
+        <p>End-of-day journaling and weekly pattern insights replace guilt-inducing completion percentages with honest reflection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<div class="pull-quote">
+  <blockquote>
+    "What if your productivity app helped you do <em>less</em>,
+    and feel better about it?"
+    <cite>— Core design question that shaped myday²</cite>
+  </blockquote>
+</div>
+
+<!-- SECTION 3: SOLUTION — FEATURES -->
+<section>
+  <div class="section-inner">
+    <div class="section-tag">The Solution</div>
+    <h2>Six features. One <em>philosophy</em>.</h2>
+    <p>
+      Every feature in myday² flows from the same principle: human capacity is variable, and a
+      good system works with it, not against it. Calm technology — in the tradition of Mark Weiser
+      and John Seely Brown — means the app stays in the periphery until you need it, and never
+      creates more cognitive load than it relieves.
+    </p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🔋</span>
+        <h3>Capacity-First Planning</h3>
+        <p>Daily check-in anchors your plan to your real energy level. The system never asks you to promise more than you have.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🤖</span>
+        <h3>AI-Powered Day Plan</h3>
+        <p>The agentic planner synthesises your tasks, calendar, and capacity score into a realistic, prioritised day schedule — automatically.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔄</span>
+        <h3>Adaptive Tasks</h3>
+        <p>If something changes — a meeting overruns, energy dips — the plan adapts in real time. No manual reshuffling required.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📅</span>
+        <h3>Calendar Integration</h3>
+        <p>Reads your existing calendar to understand what time is truly free, so plans are always grounded in reality, not wishful thinking.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📓</span>
+        <h3>Daily Journal</h3>
+        <p>End-of-day prompts guide a two-minute reflection. No streaks, no shame — just honest check-ins that build self-knowledge over time.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📊</span>
+        <h3>Insights & Patterns</h3>
+        <p>Weekly pattern recognition surfaces your peak energy windows, common blockers, and capacity trends — so planning gets smarter week by week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: DESIGN PROCESS -->
+<section>
+  <div class="section-inner">
+    <div class="section-tag">Design Process</div>
+    <h2>From insight to <em>shipped feature</em></h2>
+    <p>The design followed a double-diamond process accelerated by AI-assisted research synthesis. Each stage had a clear output, ensuring the team never confused activity with progress.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h4>Empathize</h4>
+        <p>40+ user interviews, diary studies, and competitive teardowns of 12 productivity apps.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h4>Define</h4>
+        <p>Capacity paradox identified as the core problem. "Guilt loop" pattern documented across personas.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h4>Ideate</h4>
+        <p>80+ concepts sketched across 3 design sprints. Calm technology principles applied as filters.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h4>Design</h4>
+        <p>6-screen core flow: check-in → AI plan → focused work → adaptive updates → journal → insights.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <h4>Test</h4>
+        <p>3 rounds of usability testing with 24 participants. Guilt-spiral rate: 0% in final prototype.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">06</div>
+        <h4>Launch</h4>
+        <p>MVP shipped with capacity check-in + AI day plan. 3× task completion vs. baseline apps in pilot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: OUTCOMES -->
+<section>
+  <div class="section-inner">
+    <div class="section-tag">Outcomes</div>
+    <h2>What changed when <em>capacity came first</em></h2>
+    <p>
+      Pilot participants used myday² for 4 weeks alongside their previous productivity system.
+      The results were less about doing more, and more about feeling right-sized — which turned
+      out to be far more sustainable.
+    </p>
+    <div class="stat-row">
+      <div class="stat-card"><span class="num">3×</span><span class="lbl">increase in task completion rate vs. baseline</span></div>
+      <div class="stat-card"><span class="num">0</span><span class="lbl">guilt spiral events across all test sessions</span></div>
+      <div class="stat-card"><span class="num">91%</span><span class="lbl">of users rated daily check-in as "calming, not stressful"</span></div>
+      <div class="stat-card"><span class="num">4 wk</span><span class="lbl">average retention vs. industry avg of 1.5 weeks</span></div>
+    </div>
+    <div class="outcomes-chips">
+      <span class="chip">Capacity-First UX Model</span>
+      <span class="chip">Agentic Day Planner</span>
+      <span class="chip">0 Guilt Spirals in Testing</span>
+      <span class="chip">3× Task Completion</span>
+      <span class="chip">Calm Technology Principles</span>
+      <span class="chip">Real-Time Adaptive Planning</span>
+      <span class="chip">Behavioral Systems Design</span>
+    </div>
+  </div>
+</section>
+
+<!-- KEEP READING -->
+<div class="keep-reading">
+  <div class="keep-reading-inner">
+    <h2>Keep reading</h2>
+    <div class="kr-grid">
+      <a href="case-vayu.html" class="kr-card">
+        <div class="kr-tag">Automotive · EV Design</div>
+        <h3>Hyundai VAYU</h3>
+        <p>Designing an EV for India's complexity — 6-stage consumer journey across 4 regional intelligences.</p>
+        <div class="kr-arrow">←</div>
+      </a>
+      <a href="case-mbs.html" class="kr-card">
+        <div class="kr-tag">Health Tech · Behaviour Design</div>
+        <h3>Mind Body Sync</h3>
+        <p>A wellbeing platform that rewires how 115 students detect, regulate, and recover from distress.</p>
+        <div class="kr-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2024 Abhimanyu Shukla · M.Des Interaction Design, IIT Hyderabad · <a href="mailto:abhimanyushukla@example.com">Get in touch</a></p>
+</footer>
+
+</body>
+</html>

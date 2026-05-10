@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhimanyu Shukla — Behavioral Systems Designer</title>
+<meta name="description" content="Interaction designer & behavioral researcher blending UX craft with systems thinking. M.Des student at IIT Hyderabad. B.Des Gold Medalist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════
+   DESIGN TOKENS — Jessica Goldman Style
+══════════════════════════════ */
+:root {
+  --bg:        #FFFFFF;
+  --bg-alt:    #F8F8F5;
+  --bg-card:   #FAFAF8;
+  --text:      #111111;
+  --text-2:    #555555;
+  --text-3:    #999999;
+  --border:    #E5E5E2;
+  --border-2:  #EBEBEB;
+  --accent:    #E07C55;
+  --accent-lt: #FEF0EA;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max:   1120px;
+  --r:     14px;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ══════════════════════════════
+   CONTAINER
+══════════════════════════════ */
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ══════════════════════════════
+   NAVIGATION
+══════════════════════════════ */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  height: 64px;
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-2);
+  transition: color 0.15s;
+  letter-spacing: -0.01em;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--text) !important;
+  color: var(--bg) !important;
+  padding: 9px 20px;
+  border-radius: 100px;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: #333 !important; }
+
+/* ══════════════════════════════
+   HERO
+══════════════════════════════ */
+.hero {
+  padding: 96px 0 80px;
+  border-bottom: 1px solid var(--border);
+}
+.hero-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 80px;
+  align-items: center;
+}
+.hero-greeting {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-2);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(42px, 5vw, 62px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+.hero-h1 em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 600;
+}
+.hero-sub {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text-2);
+  max-width: 500px;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 100px;
+  transition: all 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--text);
+  color: white;
+}
+.btn-primary:hover { background: #333; }
+.btn-ghost {
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  background: transparent;
+}
+.btn-ghost:hover { border-color: var(--text-2); color: var(--text); }
+
+/* Hero Illustration */
+.hero-illustration {
+  aspect-ratio: 1;
+  border-radius: 24px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-illo-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ══════════════════════════════
+   LOGO BAR
+══════════════════════════════ */
+.logo-bar {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+.logo-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.logo-item {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════
+   CASE STUDY CARDS
+══════════════════════════════ */
+.case-studies {
+  padding: 80px 0 40px;
+}
+.case-studies-header {
+  margin-bottom: 56px;
+}
+.section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.case-studies-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.case-studies-header h2 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* Card */
+.case-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-bottom: 28px;
+  transition: box-shadow 0.25s, transform 0.25s;
+  background: var(--bg);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.case-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.09);
+  transform: translateY(-2px);
+}
+.case-card.reverse { grid-template-columns: 1fr 1fr; }
+.case-card.reverse .case-card-visual { order: 2; }
+.case-card.reverse .case-card-body { order: 1; }
+
+/* Card — full width variant */
+.case-card.full { grid-template-columns: 1fr; }
+.case-card.full .case-card-visual { height: 380px; }
+
+.case-card-visual {
+  background: var(--bg-alt);
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+}
+.case-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+.case-card:hover .case-card-visual img { transform: scale(1.02); }
+
+.case-card-visual-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  gap: 12px;
+}
+.case-card-visual-placeholder span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-3);
+}
+
+.case-card-body {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+.case-card-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+.case-card-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.case-card-desc {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text-2);
+  margin-bottom: 24px;
+}
+.case-card-stats {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+.stat-block {}
+.stat-num {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+  display: block;
+  letter-spacing: -0.02em;
+}
+.stat-num.accent { color: var(--accent); }
+.stat-desc {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.case-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1.5px solid var(--text);
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+  width: fit-content;
+}
+.case-card-link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ══════════════════════════════
+   STATS HIGHLIGHT BAR
+══════════════════════════════ */
+.highlight-bar {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0;
+  margin: 48px 0 0;
+}
+.highlight-bar-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.highlight-item {
+  text-align: center;
+  padding: 0 32px;
+  border-right: 1px solid var(--border);
+}
+.highlight-item:last-child { border-right: none; }
+.hi-num {
+  font-family: var(--serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  display: block;
+  margin-bottom: 8px;
+}
+.hi-num em { font-style: italic; color: var(--accent); }
+.hi-label {
+  font-size: 0.875rem;
+  color: var(--text-2);
+  font-weight: 400;
+}
+
+/* ══════════════════════════════
+   ABOUT SECTION
+══════════════════════════════ */
+.about-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--border);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-left {}
+.about-tags-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.tag-pill {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-2);
+}
+.about-h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.about-h2 em { font-style: italic; color: var(--accent); }
+.about-p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-2);
+  margin-bottom: 16px;
+}
+.about-p strong { color: var(--text); font-weight: 500; }
+.about-p:last-of-type { margin-bottom: 28px; }
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px;
+}
+.about-card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+.cred-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cred-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-2);
+  gap: 12px;
+}
+.cred-entry:last-child { border-bottom: none; padding-bottom: 0; }
+.cred-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.cred-sub {
+  font-size: 0.8125rem;
+  color: var(--text-3);
+}
+.cred-chip {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-lt);
+  border: 1px solid rgba(224,124,85,0.2);
+  border-radius: 100px;
+  padding: 3px 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.interest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.interest-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--text-2);
+}
+.interest-item::before {
+  content: '→';
+  color: var(--accent);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════
+   APPROACH SECTION
+══════════════════════════════ */
+.approach-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+.approach-header {
+  margin-bottom: 56px;
+}
+.approach-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  max-width: 600px;
+}
+.approach-header h2 em { font-style: italic; color: var(--accent); }
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-bottom: 64px;
+}
+.principle {
+  background: var(--bg);
+  padding: 32px;
+}
+.principle-num {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+.principle-title {
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.principle-title em { font-style: italic; color: var(--accent); }
+.principle-body {
+  font-size: 0.875rem;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+/* Process */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.process-step {}
+.process-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--text);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-family: var(--serif);
+}
+.process-title {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.process-body {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════
+   TESTIMONIALS
+══════════════════════════════ */
+.testimonials {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--border);
+}
+.testimonials h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.testimonial-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 36px;
+}
+.testi-quote {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--text-2);
+  margin-bottom: 24px;
+}
+.testi-quote strong { color: var(--text); font-weight: 500; }
+.testi-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testi-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+.testi-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.testi-role {
+  font-size: 0.8125rem;
+  color: var(--text-3);
+}
+
+/* ══════════════════════════════
+   VOICE SECTION
+══════════════════════════════ */
+.voice-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--border);
+}
+.voice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 48px;
+}
+.voice-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.voice-header a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.voice-header a:hover { color: var(--text); }
+.voice-list { display: flex; flex-direction: column; }
+.voice-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: start;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.voice-item:first-child { border-top: 1px solid var(--border); }
+.voice-item:hover .voice-title { color: var(--accent); }
+.voice-title {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+  transition: color 0.15s;
+}
+.voice-meta {
+  font-size: 0.8125rem;
+  color: var(--text-3);
+}
+.voice-arrow {
+  font-size: 1rem;
+  color: var(--text-3);
+  padding-top: 4px;
+  transition: transform 0.2s;
+}
+.voice-item:hover .voice-arrow { transform: translateX(3px); }
+
+/* ══════════════════════════════
+   FAQ SECTION
+══════════════════════════════ */
+.faq-section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+.faq-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+.faq-list { display: flex; flex-direction: column; }
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: left;
+  gap: 16px;
+  transition: color 0.15s;
+}
+.faq-q:hover { color: var(--accent); }
+.faq-icon {
+  font-size: 1.25rem;
+  color: var(--text-3);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-2);
+  padding-bottom: 20px;
+  display: none;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ══════════════════════════════
+   CTA
+══════════════════════════════ */
+.cta-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--border);
+}
+.cta-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+.cta-h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.cta-h2 em { font-style: italic; color: var(--accent); }
+.cta-sub {
+  font-size: 1rem;
+  color: var(--text-2);
+  max-width: 520px;
+}
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+footer {
+  background: var(--text);
+  color: white;
+  padding: 64px 0 48px;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-brand .footer-logo {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 12px;
+}
+.footer-tagline {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.65;
+}
+.footer-col-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.65);
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: white; }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-copy {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.35);
+}
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+.footer-social a {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.45);
+  transition: color 0.15s;
+}
+.footer-social a:hover { color: white; }
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-illustration { max-width: 400px; }
+  .case-card { grid-template-columns: 1fr !important; }
+  .case-card-visual { min-height: 240px; order: 1 !important; }
+  .case-card-body { order: 2 !important; padding: 32px; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .principles-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; gap: 32px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .highlight-bar-inner { grid-template-columns: 1fr; text-align: center; }
+  .highlight-item { border-right: none; border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .highlight-item:last-child { border-bottom: none; }
+  .cta-inner { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .container { padding: 0 24px; }
+  .nav-inner { padding: 0 24px; }
+  .hero-inner { padding: 0 24px; }
+  .voice-header { flex-direction: column; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .nav-links { gap: 16px; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .hero { padding: 64px 0 56px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════ NAVIGATION ════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Abhimanyu Shukla</a>
+    <ul class="nav-links">
+      <li><a href="#case-studies">Case studies</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#voice">Writing</a></li>
+      <li><a href="mailto:abhimanyushukla1709@gmail.com" class="nav-cta">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ════════════ HERO ════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-greeting">Hi, I'm Abhi 👋</p>
+      <h1 class="hero-h1">
+        I design systems that<br>change <em>behavior.</em>
+      </h1>
+      <p class="hero-sub">
+        Interaction designer and behavioral researcher blending UX craft with systems thinking. I design digital products that shape how people think, act, and trust — beginning before the interface, ending with behavior that actually changes.
+      </p>
+      <div class="hero-actions">
+        <a href="#case-studies" class="btn btn-primary">View case studies →</a>
+        <a href="Abhimanyu_Resume.pdf" download="Abhimanyu_Shukla_Resume.pdf" class="btn btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+            <path d="M7.5 10.5L3.5 6.5H6V1.5H9V6.5H11.5L7.5 10.5Z" fill="currentColor"/>
+            <path d="M2 12.5H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+    <div class="hero-illustration">
+      <div class="hero-illo-inner">
+        <!-- SVG System Map Illustration -->
+        <svg viewBox="0 0 340 320" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;">
+          <!-- Central node -->
+          <circle cx="170" cy="160" r="36" fill="#111111" />
+          <text x="170" y="155" text-anchor="middle" fill="white" font-family="Georgia, serif" font-size="12" font-style="italic" font-weight="600">Behavior</text>
+          <text x="170" y="170" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Georgia, serif" font-size="9">System</text>
+          <!-- Satellite nodes -->
+          <circle cx="80" cy="70" r="22" fill="#E07C55" opacity="0.9" />
+          <text x="80" y="74" text-anchor="middle" fill="white" font-family="Georgia, serif" font-size="9" font-style="italic">Research</text>
+          <circle cx="270" cy="70" r="22" fill="#E07C55" opacity="0.7" />
+          <text x="270" y="74" text-anchor="middle" fill="white" font-family="Georgia, serif" font-size="9" font-style="italic">Systems</text>
+          <circle cx="60" cy="230" r="22" fill="#E07C55" opacity="0.6" />
+          <text x="60" y="227" text-anchor="middle" fill="white" font-family="Georgia, serif" font-size="8">Behavioral</text>
+          <text x="60" y="238" text-anchor="middle" fill="white" font-family="Georgia, serif" font-size="8">Design</text>
+          <circle cx="280" cy="230" r="22" fill="#E07C55" opacity="0.5" />
+          <text x="280" y="227" text-anchor="middle" fill="white" font-family="Georgia, serif" font-size="9">Human</text>
+          <text x="280" y="238" text-anchor="middle" fill="white" font-family="Georgia, serif" font-size="9">AI</text>
+          <circle cx="170" cy="40" r="18" fill="#111" opacity="0.15" stroke="#111" stroke-width="1" />
+          <text x="170" y="44" text-anchor="middle" fill="#111" font-family="Georgia, serif" font-size="8">Civic</text>
+          <!-- Connections -->
+          <line x1="99" y1="84" x2="140" y2="130" stroke="#E07C55" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>
+          <line x1="251" y1="84" x2="200" y2="130" stroke="#E07C55" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>
+          <line x1="78" y1="215" x2="136" y2="177" stroke="#E07C55" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>
+          <line x1="262" y1="215" x2="204" y2="177" stroke="#E07C55" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>
+          <line x1="170" y1="58" x2="170" y2="124" stroke="#111" stroke-width="1" stroke-dasharray="3 3" opacity="0.2"/>
+          <!-- Ring -->
+          <circle cx="170" cy="160" r="60" stroke="#E07C55" stroke-width="1" stroke-dasharray="6 4" opacity="0.25" />
+          <circle cx="170" cy="160" r="90" stroke="#111" stroke-width="0.5" stroke-dasharray="3 6" opacity="0.1" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ LOGO BAR ════════════ -->
+
+<!-- ════════════ CASE STUDIES ════════════ -->
+<section class="case-studies" id="case-studies">
+  <div class="container">
+    <div class="case-studies-header">
+      <p class="section-eyebrow">Selected Work</p>
+      <h2>Thinking made <em>visible.</em></h2>
+    </div>
+
+    <!-- Card 1: Mind Body Sync -->
+    <a href="case-mbs.html" class="case-card">
+      <div class="case-card-visual" style="background:linear-gradient(135deg,#FFE8E0,#FECFBF);">
+        <div class="case-card-visual-placeholder">
+          🧬
+          <span>Mind Body Sync</span>
+        </div>
+      </div>
+      <div class="case-card-body">
+        <p class="case-card-tag">AI-Integrated Wellbeing · 2024</p>
+        <h3 class="case-card-title">A gamified wellbeing system that doesn't optimize engagement</h3>
+        <p class="case-card-desc">Designed a three-domain behavioral system (FIT · FEEL · FOOD) integrating AI-powered pattern detection and crisis escalation. Research grounded in 115 student interviews. Coherence over metrics.</p>
+        <div class="case-card-stats">
+          <div class="stat-block">
+            <span class="stat-num accent">115</span>
+            <span class="stat-desc">Students Surveyed</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num accent">73%</span>
+            <span class="stat-desc">Emotionally Ate</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">3</span>
+            <span class="stat-desc">Domain Model</span>
+          </div>
+        </div>
+        <span class="case-card-link">Read case study →</span>
+      </div>
+    </a>
+
+    <!-- Card 2: Aham Brahmasmi -->
+    <a href="case-aham.html" class="case-card reverse">
+      <div class="case-card-visual" style="background:linear-gradient(135deg,#FFF3E8,#FFE0C8);">
+        <div class="case-card-visual-placeholder">
+          🏛
+          <span>Aham Brahmasmi</span>
+        </div>
+      </div>
+      <div class="case-card-body">
+        <p class="case-card-tag">Civic Design · Behavioral Systems · ServDes 2025</p>
+        <h3 class="case-card-title">Reframing civic sense as Dharma — not enforcement</h3>
+        <p class="case-card-desc">A behavior-change platform rooted in Vedic wisdom and behavioral science. Presented at the 9th International Service Design Conference. Designed to make civic behavior intrinsically motivated — not externally policed.</p>
+        <div class="case-card-stats">
+          <div class="stat-block">
+            <span class="stat-num accent">12:1</span>
+            <span class="stat-desc">Projected ROI</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">4</span>
+            <span class="stat-desc">Behavioral Levers</span>
+          </div>
+        </div>
+        <span class="case-card-link">Read case study →</span>
+      </div>
+    </a>
+
+    <!-- Card 3: Human AI -->
+    <a href="case-humanai.html" class="case-card">
+      <div class="case-card-visual" style="background:linear-gradient(135deg,#E8F5F5,#C8E8E6);">
+        <div class="case-card-visual-placeholder">
+          🤝
+          <span>Human Relationships in the AI Era</span>
+        </div>
+      </div>
+      <div class="case-card-body">
+        <p class="case-card-tag">Futures Design · Strategic UX · 2024</p>
+        <h3 class="case-card-title">Designing AI companions that build human connection, not replace it</h3>
+        <p class="case-card-desc">Foresight study 2024–2040. Addressed the relational capacity crisis — 1 in 2 young adults feel lonely regularly. Designed the Human-First AI Companion: the first AI that makes itself unnecessary.</p>
+        <div class="case-card-stats">
+          <div class="stat-block">
+            <span class="stat-num accent">55pt</span>
+            <span class="stat-desc">The Gap</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">10M+</span>
+            <span class="stat-desc">AI Users Globally</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num accent">+40%</span>
+            <span class="stat-desc">HCS Goal</span>
+          </div>
+        </div>
+        <span class="case-card-link">Read case study →</span>
+      </div>
+    </a>
+
+    <!-- Card 4: Hyundai VAYU -->
+    <a href="case-vayu.html" class="case-card reverse">
+      <div class="case-card-visual" style="background:linear-gradient(135deg,#E8ECF5,#C8D0E8);">
+        <div class="case-card-visual-placeholder">
+          🚗
+          <span>Hyundai VAYU</span>
+        </div>
+      </div>
+      <div class="case-card-body">
+        <p class="case-card-tag">EV Strategy · Interaction Design · India 2030</p>
+        <h3 class="case-card-title">India's first EV designed around how India actually <em>lives</em></h3>
+        <p class="case-card-desc">Compact EV SUV strategy for Hyundai India Design Center. Grounded in 10 user interviews across 4 cities and 29 primary sources. Designed around India's contradictions — not despite them.</p>
+        <div class="case-card-stats">
+          <div class="stat-block">
+            <span class="stat-num accent">450km+</span>
+            <span class="stat-desc">Real-World Range</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">10</span>
+            <span class="stat-desc">User Interviews</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">29</span>
+            <span class="stat-desc">Primary Sources</span>
+          </div>
+        </div>
+        <span class="case-card-link">Read case study →</span>
+      </div>
+    </a>
+
+    <!-- Card 5: myday2 -->
+    <a href="case-myday2.html" class="case-card">
+      <div class="case-card-visual" style="background:linear-gradient(135deg,#EDE8F5,#D0C8EC);">
+        <div class="case-card-visual-placeholder">
+          🤖
+          <span>myday2 — Agentic UX</span>
+        </div>
+      </div>
+      <div class="case-card-body">
+        <p class="case-card-tag">Agentic UX · Calm Technology · AI Design · 2024</p>
+        <h3 class="case-card-title">A productivity system that asks "what capacity do you have?"</h3>
+        <p class="case-card-desc">Designed a capacity-aware, AI-powered productivity companion that respects human variability. Against surveillance and guilt — for sustainable, agentic planning. Calm technology as a design requirement.</p>
+        <div class="case-card-stats">
+          <div class="stat-block">
+            <span class="stat-num accent">Calm</span>
+            <span class="stat-desc">Technology</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">Agentic</span>
+            <span class="stat-desc">UX Pattern</span>
+          </div>
+        </div>
+        <span class="case-card-link">Read case study →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<!-- ════════════ ABOUT ════════════ -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="about-tags-row">
+          <span class="tag-pill">M.Des · IIT Hyderabad</span>
+          <span class="tag-pill">Systems Thinker</span>
+          <span class="tag-pill">INTJ</span>
+        </div>
+        <h2 class="about-h2">About <em>me</em></h2>
+        <p class="about-p">
+          I'm a behavioral systems designer and interaction researcher currently pursuing M.Des at IIT Hyderabad. I'm Noida-raised 🏙️, IIT-educated 🎓, and rooted in the belief that <strong>the visible problem is always downstream of an invisible structure.</strong>
+        </p>
+        <p class="about-p">
+          I work across civic design, AI-native products, behavioral systems, and design education — not because I lack focus, but because these are all the same problem viewed from different angles: how do you design for the way people actually think, feel, and behave?
+        </p>
+        <a href="mailto:abhimanyushukla1709@gmail.com" class="case-card-link" style="margin-top:8px;">Say hello →</a>
+      </div>
+      <div class="about-right">
+        <div class="about-card">
+          <p class="about-card-label">Credentials</p>
+          <div class="cred-row">
+            <div class="cred-entry">
+              <div>
+                <div class="cred-name">M.Des — Interaction Design</div>
+                <div class="cred-sub">IIT Hyderabad · 2025–2027</div>
+              </div>
+              <span class="cred-chip">In Progress</span>
+            </div>
+            <div class="cred-entry">
+              <div>
+                <div class="cred-name">B.Des — Design</div>
+                <div class="cred-sub">UP Institute of Design · 2020–2024</div>
+              </div>
+              <span class="cred-chip">Gold Medalist</span>
+            </div>
+            <div class="cred-entry">
+              <div>
+                <div class="cred-name">Patent Filed — 'Link'</div>
+                <div class="cred-sub">Educational game · Paper circuits × dot-to-dot</div>
+              </div>
+              <span class="cred-chip">Patent</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-card">
+          <p class="about-card-label">Design Interests</p>
+          <div class="interest-list">
+            <div class="interest-item">Behavioral Design & decision-making psychology</div>
+            <div class="interest-item">Civic Design — systems for public behavior change</div>
+            <div class="interest-item">Human-Centered AI — augmentation over automation</div>
+            <div class="interest-item">Agentic UX — AI that extends human capacity</div>
+            <div class="interest-item">Design Education — systemic thinkers at scale</div>
+            <div class="interest-item">Strategic Design — policies, not just interfaces</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ APPROACH ════════════ -->
+<section class="approach-section">
+  <div class="container">
+    <div class="approach-header">
+      <p class="section-eyebrow">My Approach</p>
+      <h2>Systems thinking<br>meets <em>behavioral craft.</em></h2>
+    </div>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="principle-num">01</div>
+        <div class="principle-title">The visible problem is <em>downstream.</em></div>
+        <p class="principle-body">I start every project by asking: what is the actual system generating this behavior? Most designers address symptoms. I try to address the underlying architecture — behavioral, social, or systemic — that produces them.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">02</div>
+        <div class="principle-title">Design for behavior, not <em>features.</em></div>
+        <p class="principle-body">A feature that doesn't change behavior is decoration. Every design decision I make is evaluated against one question: does this make the right action easier, more visible, or more legible than the alternative?</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">03</div>
+        <div class="principle-title">Coherence over <em>optimization.</em></div>
+        <p class="principle-body">Engagement metrics measure habit formation in the product, not actual outcomes. I design for coherence — systems that leave people genuinely better off, not just more engaged.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-num">04</div>
+        <div class="principle-title">Don't design in a <em>vacuum.</em></div>
+        <p class="principle-body">Great design emerges from deep fieldwork. Cultural context, behavioral psychology, and lived experience are the material I work with.</p>
+      </div>
+    </div>
+
+    <!-- Process -->
+    <p class="section-eyebrow" style="margin-bottom:24px;">My design process</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-title">Understand & align</div>
+        <p class="process-body">I don't just ask questions — I ask the right ones. I dig into behavioral psychology, cultural context, business constraints, and system dynamics to uncover what's actually generating the problem. If a brief is murky, I clarify it. That's where real design starts.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-title">Design & collaborate</div>
+        <p class="process-body">I move from system maps to interaction models with speed and intention. Every screen is grounded in behavioral insight and practical constraints. I annotate clearly, structure files for handoff, and believe collaboration is honest — not just a checkbox.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-title">Test & adapt</div>
+        <p class="process-body">My work doesn't stop at handoff. I validate through research, prototyping, and post-launch iteration. I'm not afraid to change direction when evidence demands it — and I make sure insights feed directly into the next round.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ VOICE ════════════ -->
+<section class="voice-section" id="voice">
+  <div class="container">
+    <div class="voice-header">
+      <h2>Voice</h2>
+      <a href="mailto:abhimanyushukla1709@gmail.com">Get in touch →</a>
+    </div>
+    <div class="voice-list">
+      <div class="voice-item">
+        <div>
+          <div class="voice-title">Why Wellness Apps Are Making Us Less Well: The Engagement Trap</div>
+          <div class="voice-meta">Design Research · Mind-Body Sync · 2024</div>
+        </div>
+        <span class="voice-arrow">→</span>
+      </div>
+      <div class="voice-item">
+        <div>
+          <div class="voice-title">The 55-Point Gap: Designing AI That Builds Human Connection</div>
+          <div class="voice-meta">Futures Research · LFC Foresight Study 2024–2040</div>
+        </div>
+        <span class="voice-arrow">→</span>
+      </div>
+      <div class="voice-item">
+        <div>
+          <div class="voice-title">Civic Sense Is Not a Moral Problem — It's a Design Problem</div>
+          <div class="voice-meta">Behavioral Systems · Aham Brahmasmi Research · 2024</div>
+        </div>
+        <span class="voice-arrow">→</span>
+      </div>
+      <div class="voice-item">
+        <div>
+          <div class="voice-title">The Capacity Paradox: Why Your To-Do App Is Setting You Up to Fail</div>
+          <div class="voice-meta">Agentic UX · myday² · Calm Technology · 2024</div>
+        </div>
+        <span class="voice-arrow">→</span>
+      </div>
+      <div class="voice-item">
+        <div>
+          <div class="voice-title">India Is Not One Market: Designing EVs for Five Regional Intelligences</div>
+          <div class="voice-meta">Automotive Design · Hyundai VAYU · User Research · 2024</div>
+        </div>
+        <span class="voice-arrow">→</span>
+      </div>
+      <div class="voice-item">
+        <div>
+          <div class="voice-title">Designing for Distress: Why Early Detection Changes Everything</div>
+          <div class="voice-meta">Health UX · Mind Body Sync · Behavioral Insight · 2024</div>
+        </div>
+        <span class="voice-arrow">→</span>
+      </div>
+      <div class="voice-item">
+        <div>
+          <div class="voice-title">The Invisible Structure: What Systems Thinking Teaches Interaction Design</div>
+          <div class="voice-meta">Design Theory · Systems Thinking · IIT Hyderabad · 2025</div>
+        </div>
+        <span class="voice-arrow">→</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FAQ ════════════ -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Have questions?</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do you balance research depth with delivery timelines?
+          <span class="faq-icon">+</span>
+        </button>
+        <p class="faq-a">Research depth is never negotiable for me, but format and scope are. I believe behavioral insight is the highest-leverage investment in a project. At the same time, I know how to scope a research sprint for a 4-week engagement versus a 6-month project — and I'm always transparent about what that tradeoff means for confidence in the output.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What does "behavioral systems design" actually mean in practice?
+          <span class="faq-icon">+</span>
+        </button>
+        <p class="faq-a">It means I start every project by mapping the invisible architecture generating the behavior I'm designing for — incentive structures, social norms, cognitive patterns, environmental affordances. A screen is an output of a system. If I only design the screen, I'm addressing a symptom. I try to design the system that makes the right behavior easy, visible, and intrinsically motivated.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Are you open to internships and collaboration?
+          <span class="faq-icon">+</span>
+        </button>
+        <p class="faq-a">Yes — actively. I'm currently pursuing M.Des at IIT Hyderabad and am open to summer internships, research collaborations, and freelance projects at the intersection of behavioral design, civic systems, and human-centered AI. I'm particularly drawn to work where design decisions have real behavioral and social consequences.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do you handle projects where the problem isn't yet defined?
+          <span class="faq-icon">+</span>
+        </button>
+        <p class="faq-a">That's exactly when I'm most useful. Undefined problems are usually undefined because the visible framing is wrong. My first move is always to question the brief — not to be difficult, but because the most common design failure is solving the stated problem rather than the actual one. If a brief doesn't exist, I'll help build it. If the problem is murky, I'll clarify it. That's where the work really starts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ CTA ════════════ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <h2 class="cta-h2">Let's build something<br>that <em>matters.</em></h2>
+        <p class="cta-sub">Get behavioral design expertise without the agency overhead. Available for internships, research partnerships, and product design collaborations.</p>
+      </div>
+      <div class="cta-buttons">
+        <a href="mailto:abhimanyushukla1709@gmail.com" class="btn btn-primary">Book a conversation →</a>
+        <a href="https://www.linkedin.com/in/abhimanyushukla17/" target="_blank" class="btn btn-ghost">View LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">Abhimanyu Shukla</div>
+        <p class="footer-tagline">Behavioral systems designer and interaction researcher. Designing the invisible structures that shape behavior. M.Des · IIT Hyderabad.</p>
+      </div>
+      <div>
+        <p class="footer-col-label">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#case-studies">Case studies</a></li>
+          <li><a href="#voice">Writing</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-label">Case Studies</p>
+        <ul class="footer-links">
+          <li><a href="case-mbs.html">Mind Body Sync</a></li>
+          <li><a href="case-aham.html">Aham Brahmasmi</a></li>
+          <li><a href="case-humanai.html">Human × AI</a></li>
+          <li><a href="case-vayu.html">Hyundai VAYU</a></li>
+          <li><a href="case-myday2.html">myday2</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-label">Elsewhere</p>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/in/abhimanyushukla17/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.behance.net/abhimanyushukla" target="_blank">Behance</a></li>
+          <li><a href="mailto:abhimanyushukla1709@gmail.com">Email</a></li>
+          <li><a href="mailto:md25mdes14001@iith.ac.in">IITH Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 – Abhimanyu Shukla · Behavioral Systems Design</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/abhimanyushukla17/" target="_blank">LinkedIn</a>
+        <a href="https://www.behance.net/abhimanyushukla" target="_blank">Behance →</a>
+        <a href="mailto:abhimanyushukla1709@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>
